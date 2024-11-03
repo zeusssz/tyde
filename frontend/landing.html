@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tyde - Landing</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif}body{background-color:#0b1b2b;color:#fff;overflow-x:hidden}header{background:rgba(13,46,72,0.95);padding:20px 40px;display:flex;justify-content:space-between;align-items:center;position:fixed;width:100%;z-index:1000;backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,0.2)}.logo{display:flex;align-items:center;gap:10px}.logo-icon{width:40px;height:40px;background:linear-gradient(45deg,#1abc9c,#16a085);border-radius:8px;display:flex;align-items:center;justify-content:center}.logo-icon svg{width:24px;height:24px;fill:white}header h1{font-size:24px;color:#1abc9c;letter-spacing:1px}nav{display:flex;gap:30px}nav a{color:#ccc;text-decoration:none;font-weight:500;transition:color .3s ease;position:relative}nav a:after{content:'';position:absolute;width:0;height:2px;bottom:-5px;left:0;background-color:#1abc9c;transition:width .3s ease}nav a:hover{color:#1abc9c}nav a:hover:after{width:100%}.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:20px}.hero-content{text-align:center;max-width:800px;z-index:2}.hero span{font-size:48px;margin-bottom:20px;background:linear-gradient(45deg,#1abc9c,#16a085);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero h2{font-size:48px;margin-bottom:20px}.hero p{font-size:20px;color:#d1dbe0;margin-bottom:40px;line-height:1.6}.cta-button{display:inline-block;padding:15px 30px;background:linear-gradient(45deg,#1abc9c,#16a085);color:white;text-decoration:none;border-radius:25px;font-weight:bold;transition:transform .3s ease,box-shadow .3s ease}.cta-button:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(26,188,156,0.3)}.wave-divider{position:absolute;bottom:0;left:0;width:100%;opacity:.3;z-index:1}.floating-bubbles{position:absolute;width:100%;height:100%;overflow:hidden;z-index:1}.bubble{position:absolute;background:radial-gradient(circle at center,rgba(26,188,156,0.2),rgba(26,188,156,0));border-radius:50%}.features{padding:100px 20px;background:#0e1f31;position:relative;z-index:2}.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;max-width:1200px;margin:0 auto}.feature-card{background:rgba(13,46,72,0.5);padding:30px;border-radius:15px;text-align:center;backdrop-filter:blur(10px);transition:transform .3s ease}.feature-card:hover{transform:translateY(-5px)}.feature-icon{font-size:40px;color:#1abc9c;margin-bottom:20px}.feature-card h3{color:#1abc9c;margin-bottom:15px;font-size:24px}.feature-card p{color:#d1dbe0;line-height:1.6}@media(max-width:768px){nav{display:none}.hero h2{font-size:36px}.hero p{font-size:18px}}.testimonials{padding:100px 20px;background:#0e1f31;text-align:center}.testimonials h2{color:#1abc9c;font-size:36px;margin-bottom:50px}.carousel{max-width:800px;margin:0 auto;position:relative;overflow:hidden}.carousel-container{display:flex;transition:transform .5s ease}.testimonial-card{min-width:100%;padding:40px;background:rgba(13,46,72,0.5);border-radius:15px;backdrop-filter:blur(10px)}.testimonial-text{font-size:18px;color:#d1dbe0;line-height:1.6;margin-bottom:20px}.testimonial-author{color:#1abc9c;font-weight:bold}.testimonial-role{color:#d1dbe0;font-size:14px;margin-top:5px}.carousel-buttons{margin-top:30px;display:flex;justify-content:center;gap:10px}.carousel-btn{width:12px;height:12px;border-radius:50%;background:rgba(26,188,156,0.3);border:0;cursor:pointer;transition:background-color .3s ease}.carousel-btn.active{background:#1abc9c}@media(max-width:768px){.testimonials{padding:60px 20px}.testimonial-card{padding:20px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M21,18V16H3V18H21M3,14H21V12H3V14M3,8H21V6H3V8Z"/>
+        </svg>
+      </div>
+      <h1>Tyde</h1>
+    </div>
+    <nav>
+      <a href="#explore">Explore</a>
+      <a href="#community">Community</a>
+      <a href="#about">About Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="floating-bubbles">
+      <div class="bubble" style="width: 100px; height: 100px; left: 10%; top: 20%;"></div>
+      <div class="bubble" style="width: 150px; height: 150px; right: 15%; top: 30%;"></div>
+      <div class="bubble" style="width: 80px; height: 80px; left: 20%; bottom: 30%;"></div>
+      <div class="bubble" style="width: 120px; height: 120px; right: 25%; bottom: 20%;"></div>
+    </div>
+    
+    <div class="hero-content">
+      <h2>Dive into The Ocean with<span> Tyde</span></h2>
+      <p>Join the world's leading platform for marine research collaboration. Connect with scientists, share discoveries, and contribute to ocean conservation efforts.</p>
+      <a href="#" class="cta-button">Sign Up</a>
+    </div>
+
+    <svg class="wave-divider" viewBox="0 0 1440 320">
+      <path fill="#102a44" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+  </section>
+
+  <section class="features" id="explore">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🗣</div>
+        <h3>Social Platform</h3>
+        <p>Interact with experts and others on our feed based social platform.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Global Community</h3>
+        <p>Connect with marine biologists and researchers worldwide.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Collaborate</h3>
+        <p>Connect and Collaborate with others to amplify your research.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="testimonials" id="community">
+    <h2>What Our Community Says</h2>
+    <div class="carousel">
+      <div class="carousel-container">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Tyde has transformed how we collaborate on marine research. The platform's ability to connect scientists globally has accelerated our research on coral reef conservation significantly."</p>
+          <div class="testimonial-author">Dr. Sarah Pani</div>
+          <div class="testimonial-role">Marine Biologist, Pacific Research Institute</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"As an early-career researcher, Tyde has been invaluable in connecting me with mentors and collaborators. The data sharing features are particularly impressive."</p>
+          <div class="testimonial-author">Wade R.</div>
+          <div class="testimonial-role">PhD Candidate, Ocean Sciences</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The community here is exceptional. We've managed to coordinate multiple international research projects through Tyde, something that would have been much more challenging before."</p>
+          <div class="testimonial-author">Dr. Paige Watterson </div>
+          <div class="testimonial-role">Research Director, Marine Conservation Alliance</div>
+        </div>
+      </div>
+      <div class="carousel-buttons"></div>
+    </div>
+  </section>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from('.hero-content > *', {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power2.out'
+    });
+    document.querySelectorAll('.bubble').forEach((bubble, index) => {
+      gsap.to(bubble, {
+        y: '-=50',
+        duration: 2 + Math.random(),
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut',
+        delay: index * 0.3
+      });
+    });
+    gsap.from('.feature-card', {
+      scrollTrigger: {
+        trigger: '.features',
+        start: 'top center'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'power2.out'
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('.carousel-container');
+  const cards = document.querySelectorAll('.testimonial-card');
+  const buttonsContainer = document.querySelector('.carousel-buttons');
+  let currentIndex = 0;
+  cards.forEach((_, index) => {
+    const button = document.createElement('button');
+    button.classList.add('carousel-btn');
+    if (index === 0) button.classList.add('active');
+    button.addEventListener('click', () => {
+      goToSlide(index);
+    });
+    buttonsContainer.appendChild(button);
+  });
+  const buttons = document.querySelectorAll('.carousel-btn');
+  function goToSlide(index) {
+    container.style.transform = `translateX(-${index * 100}%)`;
+    buttons.forEach(btn => btn.classList.remove('active'));
+    buttons[index].classList.add('active');
+    currentIndex = index;
+  }
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    goToSlide(currentIndex);
+  }, 5000);
+});
+  </script>
+</body>
+</html>
