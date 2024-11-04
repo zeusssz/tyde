@@ -98,9 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const container = document.querySelector('.carousel-container');
     const cards = document.querySelectorAll('.testimonial-card');
     const buttonsContainer = document.querySelector('.carousel-buttons');
-    const prevButton = document.querySelector('.carousel-prev');
-    const nextButton = document.querySelector('.carousel-next');
     let currentIndex = 0;
+
+    // Create dot indicators
     cards.forEach((_, index) => {
         const button = document.createElement('button');
         button.classList.add('carousel-btn');
@@ -108,46 +108,22 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', () => goToSlide(index));
         buttonsContainer.appendChild(button);
     });
-    
-    const buttons = document.querySelectorAll('.carousel-btn');
-    
-    function updateActiveStates() {
-        cards.forEach((card, index) => {
-            card.classList.toggle('active', index === currentIndex);
-        });
-        buttons.forEach((btn, index) => {
-            btn.classList.toggle('active', index === currentIndex);
-        });
-    }
-    
+
     function goToSlide(index) {
         currentIndex = index;
-        const offset = -index * (100 / cards.length);
-        container.style.transform = `translateX(${offset}%)`;
-        updateActiveStates();
+        container.style.transform = `translateX(-${index * 100}%)`;
+        
+        // Update active button
+        document.querySelectorAll('.carousel-btn').forEach((btn, i) => {
+            btn.classList.toggle('active', i === index);
+        });
     }
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-        goToSlide(currentIndex);
-    });
-    
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % cards.length;
-        goToSlide(currentIndex);
-    });
-    let interval = setInterval(() => {
+
+    // Auto-advance
+    setInterval(() => {
         currentIndex = (currentIndex + 1) % cards.length;
         goToSlide(currentIndex);
     }, 5000);
-    const carousel = document.querySelector('.carousel');
-    carousel.addEventListener('mouseenter', () => clearInterval(interval));
-    carousel.addEventListener('mouseleave', () => {
-        interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % cards.length;
-            goToSlide(currentIndex);
-        }, 5000);
-    });
-    updateActiveStates();
 });
     gsap.registerPlugin(ScrollTrigger);
     gsap.from('.hero-content > *', {
