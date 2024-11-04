@@ -67,31 +67,88 @@
     </div>
   </section>
   
-  <section class="testimonials" id="community">
+<section class="testimonials" id="community">
     <h2>What Our Community Says</h2>
     <div class="carousel">
-      <div class="carousel-container">
-        <div class="testimonial-card">
-          <p class="testimonial-text">"Tyde has transformed how we collaborate on marine research. The platform's ability to connect scientists globally has accelerated our research on coral reef conservation significantly."</p>
-          <div class="testimonial-author">Dr. Sarah Pani</div>
-          <div class="testimonial-role">Marine Biologist, Pacific Research Institute</div>
+        <button class="carousel-nav carousel-prev">&lt;</button>
+        <button class="carousel-nav carousel-next">&gt;</button>
+        <div class="carousel-container">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Tyde has transformed how we collaborate on marine research. The platform's ability to connect scientists globally has accelerated our research on coral reef conservation significantly."</p>
+                <div class="testimonial-author">Dr. Sarah Pani</div>
+                <div class="testimonial-role">Marine Biologist, Pacific Research Institute</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"As an early-career researcher, Tyde has been invaluable in connecting me with mentors and collaborators. The data sharing features are particularly impressive."</p>
+                <div class="testimonial-author">Wade R.</div>
+                <div class="testimonial-role">PhD Candidate, Ocean Sciences</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The community here is exceptional. We've managed to coordinate multiple international research projects through Tyde, something that would have been much more challenging before."</p>
+                <div class="testimonial-author">Dr. Paige Watterson</div>
+                <div class="testimonial-role">Research Director, Marine Conservation Alliance</div>
+            </div>
         </div>
-        <div class="testimonial-card">
-          <p class="testimonial-text">"As an early-career researcher, Tyde has been invaluable in connecting me with mentors and collaborators. The data sharing features are particularly impressive."</p>
-          <div class="testimonial-author">Wade R.</div>
-          <div class="testimonial-role">PhD Candidate, Ocean Sciences</div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-text">"The community here is exceptional. We've managed to coordinate multiple international research projects through Tyde, something that would have been much more challenging before."</p>
-          <div class="testimonial-author">Dr. Paige Watterson </div>
-          <div class="testimonial-role">Research Director, Marine Conservation Alliance</div>
-        </div>
-      </div>
-      <div class="carousel-buttons"></div>
+        <div class="carousel-buttons"></div>
     </div>
-  </section>
+</section>
 
-  <script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.carousel-container');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const buttonsContainer = document.querySelector('.carousel-buttons');
+    const prevButton = document.querySelector('.carousel-prev');
+    const nextButton = document.querySelector('.carousel-next');
+    let currentIndex = 0;
+    cards.forEach((_, index) => {
+        const button = document.createElement('button');
+        button.classList.add('carousel-btn');
+        if (index === 0) button.classList.add('active');
+        button.addEventListener('click', () => goToSlide(index));
+        buttonsContainer.appendChild(button);
+    });
+    
+    const buttons = document.querySelectorAll('.carousel-btn');
+    
+    function updateActiveStates() {
+        cards.forEach((card, index) => {
+            card.classList.toggle('active', index === currentIndex);
+        });
+        buttons.forEach((btn, index) => {
+            btn.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    function goToSlide(index) {
+        currentIndex = index;
+        const offset = -index * (100 / cards.length);
+        container.style.transform = `translateX(${offset}%)`;
+        updateActiveStates();
+    }
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        goToSlide(currentIndex);
+    });
+    
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        goToSlide(currentIndex);
+    });
+    let interval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        goToSlide(currentIndex);
+    }, 5000);
+    const carousel = document.querySelector('.carousel');
+    carousel.addEventListener('mouseenter', () => clearInterval(interval));
+    carousel.addEventListener('mouseleave', () => {
+        interval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % cards.length;
+            goToSlide(currentIndex);
+        }, 5000);
+    });
+    updateActiveStates();
+});
     gsap.registerPlugin(ScrollTrigger);
     gsap.from('.hero-content > *', {
       opacity: 0,
@@ -121,32 +178,6 @@
       stagger: 0.2,
       ease: 'power2.out'
     });
-    document.addEventListener('DOMContentLoaded', function() {
-  const container = document.querySelector('.carousel-container');
-  const cards = document.querySelectorAll('.testimonial-card');
-  const buttonsContainer = document.querySelector('.carousel-buttons');
-  let currentIndex = 0;
-  cards.forEach((_, index) => {
-    const button = document.createElement('button');
-    button.classList.add('carousel-btn');
-    if (index === 0) button.classList.add('active');
-    button.addEventListener('click', () => {
-      goToSlide(index);
-    });
-    buttonsContainer.appendChild(button);
-  });
-  const buttons = document.querySelectorAll('.carousel-btn');
-  function goToSlide(index) {
-    container.style.transform = `translateX(-${index * 100}%)`;
-    buttons.forEach(btn => btn.classList.remove('active'));
-    buttons[index].classList.add('active');
-    currentIndex = index;
-  }
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % cards.length;
-    goToSlide(currentIndex);
-  }, 5000);
-});
   </script>
 </body>
 </html>
