@@ -1,0 +1,32 @@
+:root {
+    --color-primary: #1abc9c;
+    --color-primary-dark: #16a085;
+    --color-background: #0b1b2b;
+    --color-header-background: rgba(13, 46, 72, 0.95);
+    --color-feature-card-background: rgba(13, 46, 72, 0.5);
+    
+    --color-text: #fff;
+    --color-light-text: #d1dbe0;
+    --color-link: #ccc;
+
+    --color-hover-shadow: rgba(26, 188, 156, 0.3);
+    --color-link-hover: var(--color-primary);
+
+    --font: 'Arial', sans-serif;
+    --font-size-base: 16px;
+    --font-size-h1: 24px;
+    --font-size-h2: 36px;
+    --font-size-h2-large: 48px;
+    --font-size-paragraph: 20px;
+    --font-size-paragraph-small: 18px;
+    --font-size-feature-icon: 40px;
+
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 30px;
+    --spacing-xlarge: 40px;
+
+    --border-radius-small: 8px;
+    --border-radius-medium: 15px;
+    --border-radius-large: 25px;
+}
