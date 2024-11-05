@@ -5,6 +5,86 @@
   list-style: none;
   font-family: "Open Sans", sans-serif;
 }
+ header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: rgba(13, 46, 72, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+  }
+
+.floating-bubbles {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.bubble {
+	position: absolute;
+	background: radial-gradient(circle at center, rgba(26, 188, 156, 0.2), rgba(26, 188, 156, 0));
+	border-radius: 50%;
+}
+  
+  .menu-btn {
+      background: var(--color-primary);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+  }
+  
+  .menu-btn svg {
+      width: 24px;
+      height: 24px;
+      color: var(--color-text);
+      stroke-width: 1.5px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .logo span {
+      color: var(--color-primary);
+      font-size: 1.5rem;
+      font-weight: 600;
+  }
+  
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-text);
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 0.5px;
+  }
 
 body {
   display: grid;
