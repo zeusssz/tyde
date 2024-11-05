@@ -5,6 +5,8 @@
   list-style: none;
   font-family: "Open Sans", sans-serif;
 }
+
+/* Navigation bar styles */
 header, header * {
   margin: 0 !important;
   padding: 0 !important;
@@ -12,7 +14,6 @@ header, header * {
   font-family: "Open Sans", sans-serif !important;
 }
 
-/* Increase specificity and use !important for critical styles */
 body > header {
   display: flex !important;
   justify-content: space-between !important;
@@ -26,7 +27,6 @@ body > header {
   box-shadow: var(--shadow-md) !important;
 }
 
-/* Specific styles for header elements */
 body > header .menu-btn {
   background: var(--color-primary) !important;
   border: none !important;
@@ -81,6 +81,7 @@ body > header .logo h1 {
   letter-spacing: 0.5px !important;
 }
 
+/* Existing styles */
 body {
   display: grid;
   place-items: center;
@@ -202,4 +203,3 @@ body {
   color: var(--col);
   transition: all 0.3s ease;
 }
-
