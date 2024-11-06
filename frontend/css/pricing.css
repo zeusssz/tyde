@@ -92,10 +92,11 @@ header {
     }
 
 body {
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  background-color: #171717;
+     background-color: var(--color-background);
+      color: var(--color-text);
+      line-height: 1.5;
+      min-height: 100vh;
+    
 }
 
 .pricing-plans {
