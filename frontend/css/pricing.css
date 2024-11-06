@@ -35,26 +35,15 @@ header {
   box-shadow: var(--shadow-md);
 }
 
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-}
-
-.logo-icon {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-icon svg {
-  width: 24px;
-  height: 24px;
-  fill: var(--color-text);
 }
 
 .logo span {
@@ -79,12 +68,35 @@ nav a:hover {
   color: var(--color-primary);
 }
 
+/* Remove this block
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+*/
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-text);
+}
+
 .menu-btn {
-  background: var(--color-primary);
+  background: transparent;
   border: none;
   width: 40px;
   height: 40px;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,7 +225,7 @@ main {
     display: none;
   }
   
-  .menu-btn {
-    display: flex;
+  .logo-icon {
+    display: none;
   }
 }
