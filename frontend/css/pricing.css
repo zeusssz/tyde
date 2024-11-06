@@ -1,150 +1,150 @@
+:root {
+  --color-primary: #1abc9c;
+  --color-primary-dark: #16a085;
+  --color-background: #171717;
+  --color-card-bg: #26262620;
+  --color-text: #ffffff;
+  --color-text-secondary: #a3a3a3;
+  --color-border: #262626;
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  list-style: none;
   font-family: "Open Sans", sans-serif;
 }
 
-/* Navigation bar styles */
-header, header * {
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-  font-family: "Open Sans", sans-serif !important;
-}
-
-body > header {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  padding: 1.5rem 2rem !important;
-  background: rgba(13, 46, 72, 0.95) !important;
-  backdrop-filter: blur(10px) !important;
-  position: fixed !important;
-  width: 100% !important;
-  z-index: 1000 !important;
-  box-shadow: var(--shadow-md) !important;
-}
-
-body > header .menu-btn {
-  background: var(--color-primary) !important;
-  border: none !important;
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 8px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  cursor: pointer !important;
-}
-
-body > header .menu-btn svg {
-  width: 24px !important;
-  height: 24px !important;
-  color: var(--color-text) !important;
-  stroke-width: 1.5px !important;
-}
-
-body > header .logo {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.75rem !important;
-}
-
-body > header .logo span {
-  color: var(--color-primary) !important;
-  font-size: 1.5rem !important;
-  font-weight: 600 !important;
-}
-
-body > header .logo-icon {
-  width: 40px !important;
-  height: 40px !important;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark)) !important;
-  border-radius: 8px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-body > header .logo-icon svg {
-  width: 24px !important;
-  height: 24px !important;
-  fill: var(--color-text) !important;
-}
-
-body > header .logo h1 {
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
-  color: var(--color-primary) !important;
-  letter-spacing: 0.5px !important;
-}
-
-/* Existing styles */
 body {
-  display: grid;
-  place-items: center;
+  background-color: var(--color-background);
+  color: var(--color-text);
   min-height: 100vh;
-  background-color: #171717;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(13, 46, 72, 0.95);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--shadow-md);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-text);
+}
+
+.logo span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--color-primary);
+}
+
+.menu-btn {
+  background: var(--color-primary);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.menu-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-text);
+}
+
+main {
+  padding-top: 80px; /* To account for the fixed header */
 }
 
 .pricing-plans {
-  gap: 32px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
-  width: 100%;
+  gap: 32px;
   padding: 64px;
 }
 
 .pricing-card {
-  --col: #e4e4e7;
   position: relative;
-  min-width: 360px;
+  width: 360px;
   padding: 32px;
   padding-bottom: 96px;
   border-radius: 4px;
-  border: 1px solid #262626;
-  background-color: #26262620;
-  box-shadow: 0 0 32px transparent;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card-bg);
   text-align: center;
-}
-
-.pricing-card.basic {
-  --col: #0891b2;
-}
-
-.pricing-card.standard {
-  --col: #059669;
-}
-
-.pricing-card.premium {
-  --col: #c026d3;
+  transition: all 0.5s ease;
 }
 
 .pricing-card:hover {
   border-color: var(--col);
-  background-color: #26262680;
+  background-color: rgba(38, 38, 38, 0.5);
   box-shadow: 0 0 32px #171717;
   transform: translateY(-16px) scale(1.02);
-  transition: all 0.5s ease;
 }
+
+.pricing-card.basic { --col: #0891b2; }
+.pricing-card.standard { --col: #059669; }
+.pricing-card.premium { --col: #c026d3; }
 
 .pricing-card > *:not(:last-child) {
   margin-bottom: 32px;
 }
 
 .pricing-card .heading h4 {
-  padding-bottom: 12px;
   color: var(--col);
   font-size: 24px;
   font-weight: normal;
+  padding-bottom: 12px;
 }
 
 .pricing-card .heading p {
-  color: #a3a3a3;
+  color: var(--color-text-secondary);
   font-size: 14px;
   font-weight: lighter;
 }
@@ -159,24 +159,27 @@ body {
 .pricing-card .price sub {
   position: absolute;
   bottom: 14px;
-  color: #a3a3a3;
+  color: var(--color-text-secondary);
   font-size: 14px;
   font-weight: lighter;
 }
 
+.pricing-card .features {
+  list-style: none;
+  text-align: left;
+}
+
 .pricing-card .features li {
-  padding-bottom: 16px;
-  color: #a3a3a3;
+  color: var(--color-text-secondary);
   font-size: 16px;
   font-weight: lighter;
-  text-align: left;
+  padding-bottom: 16px;
 }
 
 .pricing-card .features li i,
 .pricing-card .features li strong {
-  color: #e4e4e7;
+  color: var(--color-text);
   font-size: 16px;
-  text-align: left;
 }
 
 .pricing-card .features li strong {
@@ -193,13 +196,24 @@ body {
   border-radius: 4px;
   border: 1px solid var(--col);
   background-color: var(--col);
-  color: #e4e4e7;
+  color: var(--color-text);
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.pricing-card .cta-btn:active {
+.pricing-card .cta-btn:hover {
   background-color: transparent;
   color: var(--col);
-  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+  
+  .menu-btn {
+    display: flex;
+  }
 }
