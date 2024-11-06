@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <link rel="stylesheet" href="./css/signup-styles.css">
+  <link rel="stylesheet" href=".signup-styles.css">
 </head>
 <body>
   <div class="page-container">
@@ -25,8 +25,7 @@
         <a href="index.html">Home</a>
         <a href="tinder.html">Tyder</a>
         <a href="chatbot.html">Marina</a>
-        <a href="#">Feed</a>
-        <a href="pricing.html">Pricing</a>
+        <a href="#feed">Feed</a>
       </nav>
     </header>
 
@@ -39,7 +38,7 @@
                 <h2>Welcome to Tyde</h2>
                 <p>Join the global marine research community</p>
               </div>
-              
+
               <div class="form-group">
                 <label for="fullname">Full Name</label>
                 <div class="input-wrapper">
@@ -64,7 +63,30 @@
                 </div>
               </div>
 
-
+              <!-- Hobby Selection Field -->
+              <div class="form-group">
+                <label for="hobbies">Select Your Marine Biology Interests</label>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="coral-reefs" name="hobbies" value="Coral Reefs">
+                  <label for="coral-reefs">Coral Reefs</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="marine-conservation" name="hobbies" value="Marine Conservation">
+                  <label for="marine-conservation">Marine Conservation</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="deep-sea" name="hobbies" value="Deep-Sea Exploration">
+                  <label for="deep-sea">Deep-Sea Exploration</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="fish-behavior" name="hobbies" value="Fish Behavior">
+                  <label for="fish-behavior">Fish Behavior</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" id="marine-genetics" name="hobbies" value="Marine Genetics">
+                  <label for="marine-genetics">Marine Genetics</label>
+                </div>
+              </div>
 
               <div class="form-group checkbox-group">
                 <input type="checkbox" id="terms" name="terms" required>
@@ -79,7 +101,7 @@
             </form>
           </div>
         </div>
-        
+
         <div class="right-section">
           <div class="floating-bubbles">
             <div class="bubble"></div>
@@ -92,15 +114,15 @@
             <div class="features-list">
               <div class="feature-item">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                <span>gyat</span>
+                <span>Network with Peers</span>
               </div>
               <div class="feature-item">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                <span>d</span>
+                <span>Access Research Papers</span>
               </div>
               <div class="feature-item">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                <span>Cdddddddd</span>
+                <span>Explore Discoveries</span>
               </div>
             </div>
           </div>
@@ -109,41 +131,14 @@
     </main>
   </div>
 
-  <script>
-    gsap.from('.form-wrapper', {
-      opacity: 0,
-      x: -50,
-      duration: 1,
-      ease: 'power2.out'
-    });
-
-    gsap.from('.content-overlay', {
-      opacity: 0,
-      x: 50,
-      duration: 1,
-      delay: 0.3,
-      ease: 'power2.out'
-    });
-
-    gsap.from('.feature-item', {
-      opacity: 0,
-      y: 20,
-      duration: 0.8,
-      stagger: 0.2,
-      delay: 0.5,
-      ease: 'power2.out'
-    });
-
-    document.querySelectorAll('.bubble').forEach((bubble, index) => {
-      gsap.to(bubble, {
-        y: '-=50',
-        duration: 2 + Math.random(),
-        repeat: -1,
-        yoyo: true,
-        ease: 'power1.inOut',
-        delay: index * 0.3
-      });
-    });
-  </script>
+  <footer>
+    <div class="footer-content">
+      <p>© 2023 Tyde - Dive Into Research</p>
+      <nav>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
