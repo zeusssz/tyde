@@ -4,9 +4,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_socketio import SocketIO, emit
 import os
 from dotenv import load_dotenv
+from datetime import datetime
 
 load_dotenv()
-app = Flask(_name_)
+app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 
@@ -71,7 +72,7 @@ def handle_disconnect():
 def handle_chat_message(data):
     emit('chat_message', {'user': current_user.username, 'message': data['message']}, broadcast=True)
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     socketio.run(app, debug=True)
