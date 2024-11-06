@@ -36,27 +36,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    background: rgba(13, 46, 72, 0.95);
+    background: rgba(10, 25, 47, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     z-index: 1000;
     box-shadow: var(--shadow-md);
   }
-
-.floating-bubbles {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	z-index: 1;
-}
-
-.bubble {
-	position: absolute;
-	background: radial-gradient(circle at center, rgba(26, 188, 156, 0.2), rgba(26, 188, 156, 0));
-	border-radius: 50%;
-}
   
   .menu-btn {
       background: var(--color-primary);
