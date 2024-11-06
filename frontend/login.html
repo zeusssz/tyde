@@ -68,4 +68,35 @@
         </main>
     </div>
 </body>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from('.hero-content > *', {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power2.out'
+    });
+    document.querySelectorAll('.bubble').forEach((bubble, index) => {
+      gsap.to(bubble, {
+        y: '-=50',
+        duration: 2 + Math.random(),
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut',
+        delay: index * 0.3
+      });
+    });
+    gsap.from('.feature-card', {
+      scrollTrigger: {
+        trigger: '.features',
+        start: 'top center'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'power2.out'
+    });
+  </script>
 </html>
