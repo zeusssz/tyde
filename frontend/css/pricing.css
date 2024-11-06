@@ -11,7 +11,7 @@ header {
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 2rem;
-      background: rgba(13, 46, 72, 0.95);
+      background: rgba(13, 46, 72, 0.95);;
       backdrop-filter: blur(10px);
       position: fixed;
       width: 100%;
