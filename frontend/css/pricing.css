@@ -22,7 +22,7 @@ header {
       justify-content: space-between;
       align-items: center, top;
       padding: 1.5rem 2rem;
-      background: rgba(13, 46, 72, 0.95);;
+      background: rgba(13, 46, 72, 0.95);
       backdrop-filter: blur(10px);
       position: fixed;
       width: 100%;
@@ -55,7 +55,7 @@ header {
     .logo h1 {
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--color-primary);
+      color: #ffffff;
       letter-spacing: 0.5px;
     }
 
