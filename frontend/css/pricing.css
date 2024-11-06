@@ -9,7 +9,7 @@
 header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: center, top;
       padding: 1.5rem 2rem;
       background: rgba(13, 46, 72, 0.95);;
       backdrop-filter: blur(10px);
