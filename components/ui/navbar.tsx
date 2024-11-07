@@ -20,14 +20,14 @@ const Navbar = () => {
             {isLoaded && (
               user ? (
                 <div className="flex items-center space-x-4">
-                  <Link href="/tinder">
-                    <Button variant="ghost">Tinder</Button>
+                  <Link href="/tyder">
+                    <Button variant="ghost">Tyder</Button>
                   </Link>
                   <Link href="/marina">
                     <Button variant="ghost">Marina</Button>
                   </Link>
                   <Link href="/feed">
-                    <Button variant="ghost">Feed</Button>
+                    <Button variant="ghost">Social</Button>
                   </Link>
                   <UserButton afterSignOutUrl="/" />
                 </div>

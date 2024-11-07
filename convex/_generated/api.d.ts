@@ -14,7 +14,11 @@ import type {
   FunctionReference,
 } from "convex/server";
 import type * as chatbot from "../chatbot.js";
-import type * as myFunctions from "../myFunctions.js";
+import type * as clerk from "../clerk.js";
+import type * as http from "../http.js";
+import type * as mutations from "../mutations.js";
+import type * as queries from "../queries.js";
+import type * as questions from "../questions.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -26,7 +30,11 @@ import type * as myFunctions from "../myFunctions.js";
  */
 declare const fullApi: ApiFromModules<{
   chatbot: typeof chatbot;
-  myFunctions: typeof myFunctions;
+  clerk: typeof clerk;
+  http: typeof http;
+  mutations: typeof mutations;
+  queries: typeof queries;
+  questions: typeof questions;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
